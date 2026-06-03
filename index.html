@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js 작품 모음</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>나의 p5.js 작품</h1>
+        <p>p5.js 프로젝트 작품 모음입니다.</p>
+    </header>
+
+    <main id="projects">
+        <article class="project">
+            <div class="frame" data-w="600" data-h="400">
+                <iframe src="과제1/index.html" loading="lazy" scrolling="no" title="과제1"></iframe>
+            </div>
+            <div class="caption">
+                <h2>과제 1 · 추상화 그리기</h2>
+                <a class="btn" href="과제1/index.html" target="_blank">전체 보기 ↗</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="frame" data-w="600" data-h="400">
+                <iframe src="과제4/index.html" loading="lazy" scrolling="no" title="과제4"></iframe>
+            </div>
+            <div class="caption">
+                <h2>과제 4 · 추상화에 움직임 부여</h2>
+                <a class="btn" href="과제4/index.html" target="_blank">전체 보기 ↗</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="frame" data-w="400" data-h="600">
+                <iframe src="과제2/index.html" loading="lazy" scrolling="no" title="과제2"></iframe>
+            </div>
+            <div class="caption">
+                <h2>과제 2 · 캐리커쳐 그리기</h2>
+                <a class="btn" href="과제2/index.html" target="_blank">전체 보기 ↗</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="frame" data-w="400" data-h="600">
+                <iframe src="과제3/index.html" loading="lazy" scrolling="no" title="과제3"></iframe>
+            </div>
+            <div class="caption">
+                <h2>과제 3 · 캐리커쳐에 움직임 부여</h2>
+                <a class="btn" href="과제3/index.html" target="_blank">전체 보기 ↗</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        function fitFrames() {
+            document.querySelectorAll('.frame').forEach(function (f) {
+                var w = +f.dataset.w, h = +f.dataset.h;
+                var scale = f.clientWidth / w;
+                f.style.height = (h * scale) + 'px';
+                var ifr = f.querySelector('iframe');
+                ifr.style.width = w + 'px';
+                ifr.style.height = h + 'px';
+                ifr.style.transform = 'scale(' + scale + ')';
+            });
+        }
+        window.addEventListener('load', fitFrames);
+        window.addEventListener('resize', fitFrames);
+        fitFrames();
+    </script>
+</body>
+</html>

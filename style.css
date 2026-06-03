@@ -1,0 +1,103 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Pretendard", "Segoe UI", system-ui, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%);
+    color: #f8fafc;
+    padding: 48px 24px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #c4b5fd, #f0abfc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+header p {
+    margin-top: 12px;
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+/* 2행 2열 그리드 */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    gap: 28px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.frame {
+    position: relative;
+    width: 100%;
+    background: #0f172a;
+    overflow: hidden;
+}
+
+.frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    display: block;
+    transform-origin: top left;
+}
+
+.caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+}
+
+.caption h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.btn {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #ddd6fe;
+    border: 1px solid rgba(196, 181, 253, 0.5);
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+    background: #c4b5fd;
+    color: #1e1b4b;
+}
+
+@media (max-width: 700px) {
+    #projects { grid-template-columns: 1fr; }
+}
